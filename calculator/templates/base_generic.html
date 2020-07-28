@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% block title %}
+    <title>Pediatric Chronic Kidney Disease Risk Calculator</title>
+    <link rel="icon" type="image/ico" href="/static/calculator/images/ckid_logo.jpg" />
+  {% endblock %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+
+  <!-- Add additional CSS in static file -->
+  {% load static %}
+  <!-- <link rel="stylesheet" href="{% static 'css/styles.css' %}"> -->
+  <link rel="stylesheet" type="text/css" href="{% static 'calculator/styles.css' %}">
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-2">
+        <div class="noprint">
+          {% block sidebar %}
+            <ul class="sidebar-nav">
+              <li><a href="{% url 'home' %}">Home</a></li>
+              <li><a href="{% url 'faq' %}">Frequently Asked Questions</a></li>
+              <li><a href="https://statepi.jhsph.edu/ckid/">CKiD Study Website</a></li>
+              <li><a href="https://statepi.jhsph.edu/ckid/contact.html">Contact</a></li>
+            </ul>
+         {% endblock %}
+        </div>
+      </div>
+      <div class="col-sm-10 ">
+        <div class="page-header">
+            <h1>Pediatric Chronic Kidney Disease Risk Calculator</h1>
+        </div>
+        <div style="padding-left: 40px; padding-right: 40px; padding-bottom: 50px">
+          {% block content %}{% endblock %}
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

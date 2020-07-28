@@ -1,0 +1,66 @@
+.sidebar-nav {
+    margin-top: 20px;
+    padding: 0;
+    list-style: none;
+}
+ul {list-style:none}
+h1 a {
+    color: #000000;
+}
+.page-header {
+    background-color: #ff9400;
+    margin-top: 20;
+    padding: 20px 20px 20px 40px;
+}
+body {
+  font-family: 'Georgia', serif !important;
+}
+*{box-sizing: border-box}
+form{
+    /*font-size: 200%;*/
+    /*font-family: "Courier New", Monospace;*/
+    /*text-align: center;*/
+    font-weight: bold; 
+    /*width: 500px;*/
+    /*margin: 0 auto;*/
+    background-size: 20px; 
+}    
+input[type="radio"] {
+    width: 15px;
+    height: 15px;
+    top:-2px;
+}
+input[type="number"] {
+    width: 100px;
+    height: 15px;
+    left: 40px;
+}
+select {
+    max-width: 150px;
+    left: 40px;
+}
+label{
+    position: relative;
+}
+label:after{
+    content: '';
+    position: absolute;
+    right: -40px;
+    top: 0;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+}
+@media print{
+   .noprint{
+       display:none;
+   }
+}
+
+<style>
+.borderexample
+{
+border-style:solid;
+border-color:#287EC7;
+}
+</style>

@@ -1,0 +1,25 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+	<h2>Descriptions</h2>
+	<p>This calculator provides estimated times to when a patient may require renal replacement therapy or when their current glomerular filtration rate (GFR) decreases by 50%. These estimates are based on a panel of variables from a patient's current visit and their visit approximately one year prior. The tool requires general information (age, sex, diagnosis), markers of kidney disease (GFR, proteinuria), blood pressure, blood chemistry panels (albumin, lipids, anemia) and medications (ACEi/ARB therapy). It is intended to aid clinicians in managing kidney disease for pediatric patients.</p>
+	<p>This calculator is derived from the article "Predictors of rapid progression of glomerular and nonglomerular kidney disease in children and adolescents" published in the American Journal of Kidney Diseases 2015, 65(6): 878-888 (<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4578873/">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4578873/</a>) and is based on data from the Chronic Kidney Disease in Children study (<a href="https://statepi.jhsph.edu/ckid/">https://statepi.jhsph.edu/ckid/</a>). </p>
+	<p>It should be noted that estimates from this calculator are not absolute or definitive but reflect an estimated time to needing renal replacement therapy. Please interpret the estimated times within the context of the patient’s full clinical profile.</p>
+	<b><font size="5">This calculator is for use only by nephrologists and other healthcare providers.</font></b>
+	<h2>Reference</h2>
+	<p>Warady BA, Abraham AG, Schwartz GJ, Wong CS, Muñoz A, Betoko A, Mitsnefes M, Kaskel F, Greenbaum LA, Mak RH, Flynn J, Moxey-Mims MM, Furth S. Predictors of rapid progression of glomerular and nonglomerular kidney disease in children and adolescents: the Chronic Kidney Disease in Children (CKiD) Cohort. Am J Kidney Dis 2015; 65:878-888. PMID: 25799137</p>
+	<p>Adapted from original article for online calculation by Derek K. Ng, PhD and Shuai Jiang, MHS (2019).<br>
+	Department of Epidemiology<br>
+	Johns Hopkins Bloomberg School of Public Health<br>
+	Baltimore, MD</p>
+	<h2>Acknowledgements</h2> 
+	<p>Bradley A. Warady, MD and Kathleen Mallett, APRN, FNP-C, CNN-NP for guidance and insight.<br> Children’s Mercy Hospital<br> Kansas City, MO</p>
+
+	<center>
+		<form action="{% url 'wizard' %}" method="get">
+		    <input type="submit" class="btn btn-primary" value="Start Risk Calculation" 
+		         name="Submit" id="frm1_submit" />
+		</form>
+	</center>
+{% endblock %}

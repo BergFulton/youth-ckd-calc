@@ -1,0 +1,36 @@
+
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>Frequently Asked Questions</h1>
+<hr>
+<h2>About the calculator</h2>
+<h3>What is the purpose of this calculator?</h3>
+The calculator is designed to help clinicians estimate the time to initiation of renal replacement therapy or a 50% decline in current GFR for a pediatric patient with known kidney disease. The calculation is based on the patient’s clinical variables.
+
+<h3>How does this calculator compare with other online risk calculators?</h3>
+This calculator is based on data from a study of North American children and adolescents with a pediatric diagnosis of kidney disease (specifically, the Chronic Kidney Disease in Children study, called CKiD). The calculator should be used to estimate kidney disease progression for pediatric patients with a diagnosis of kidney disease in North America. Other risk calculators may be based on data from adults and have not been well validated in children. Some risk calculators are based on GFR and urine protein levels only. This calculator uses multiple variables that are often collected at clinical visits, and is not only based on two biomarkers. Lastly, this calculator uses patient history (such as resolution or persistence of nephrotic range proteinuria) to better estimate when renal replacement therapy and 50% decline in GFR is likely to occur.
+
+<hr>
+<h2>Using the calculator</h2>
+<h3>Is this calculator applicable to any patient?</h3>
+This calculator is designed to be used by healthcare providers for pediatric patients (17 years of age or younger) with a diagnosis of chronic kidney disease (non-glomerular or glomerular etiology) and GFR < 90 ml/min|1.73m<sup>2</sup> and is expected to be generalizable to North American patients who fit this profile. 
+
+<h3>What if the patient does not have data (e.g., not measured, or not asked) for one or more questions?</h3>
+All questions must be answered in order to estimate time to initiating renal replacement therapy or 50% decline in GFR. 
+
+<h3>Why are the questions different depending on whether the patient has a non-glomerular or glomerular diagnosis?</h3>
+Disease progression between the two diagnostic groups is known to be different. Therefore, two separate prediction models were constructed for each diagnostic group.
+
+<h3>Do the variables listed on Step 3 of the form have to be from exactly one year ago?</h3>
+No, the variables do not have to be from a visit exactly one year ago, but approximately one year ago. Clinical information from one year ago is used to indicate patient history. The calculator is based on models using data from clinical visits in the CKiD study approximately one year apart, so it is recommended to use that same time frame (plus or minus a few months). If you have information available from a patient’s clinical visit approximately one year ago, you can use that information in the calculator to estimate time to renal replacement therapy or 50% decline in GFR.
+
+<hr>
+<h2>Interpreting the results</h2>
+<h3>Do the results identify when exactly the patient will have renal replacement therapy?</h3>
+No, the calculator cannot predict exactly when or if a particular patient will require renal replacement therapy. There are many factors that contribute to disease progression and the calculator does not capture all of them. These are estimates based on a large, representative cohort of children and adolescents with chronic kidney disease. In addition, the outcome includes not just renal replacement therapy, but also a 50% decline in GFR, which is an indicator of rapid disease progression. 50% decline in GFR can also occur prior to renal replacement therapy. Since the calculator provides estimates of time, variability of outcomes is shown for when 50%, 25% and 10% of patients with a similar profile will have renal replacement therapy or 50% decline in GFR.
+
+<h3>How should I interpret the results?</h3>
+The calculator will estimate the time when 50%, 25% and 10% of patients with the same clinical profile as your patient will have renal replacement therapy or exhibit a 50% reduction in their GFR. For example, if the results state "Among patients with the same profile, 25% will have RRT or half of current GFR by 6 years", this means that among patients with similar clinical profiles to your patient, 25% will be expected to have an event by 6 years and 75% will be expected to have an event after 6 years. 
+
+{% endblock %}

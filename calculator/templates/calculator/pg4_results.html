@@ -1,0 +1,39 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+	<h1>Report</h1>
+	<h2>Patient Profile</h2>
+		<table class="table table-striped">
+			{% if ckddiag_g1ng0_t == 'Glomerular' %}
+				<tr><th>Age:</th><td>{{age}} years old</td></tr>
+				<tr><th>Sex:</th><td>{{male_y1n0_t}}</td></tr>
+				<tr><th>CKD diagnosis:</th><td>{{ckddiag_g1ng0_t}}</td></tr>
+				<tr><th>GFR:</th><td>{{gfr_l1m2h3_t}}</td></tr>
+				<tr><th>Hypertension:</th><td>{{htn_y1n0_t}}</td></tr>
+				<tr><th>Hypoalbuminemia:</th><td>{{hypoalb_y1n0_t}}</td></tr>
+				<tr><th>Change of proteinuria from last clinic visit:</th><td>{{proteinuria_t}}</td></tr>
+				<tr><th>Change of anemia from last clinic visit:</th><td>{{anemia_t}}</td></tr>
+			{% else %}
+				<tr><th>Age:</th><td>{{age}} years old</td></tr>
+				<tr><th>Sex:</th><td>{{male_y1n0_t}}</td></tr>
+				<tr><th>CKD diagnosis:</th><td>{{ckddiag_g1ng0_t}}</td></tr>
+				<tr><th>GFR:</th><td>{{gfr_l1m2h3_t}}</td></tr>
+				<tr><th>Hypertension:</th><td>{{htn_y1n0_t}}</td></tr>
+				<tr><th>Hypoalbuminemia:</th><td>{{hypoalb_y1n0_t}}</td></tr>
+				<tr><th>Dyslipidemia:</th><td>{{dyslip_y1n0_t}}</td></tr>
+				<tr><th>Change of proteinuria from last clinic visit:</th><td>{{proteinuria_t}}</td></tr>
+				<tr><th>Change of anemia from last clinic visit:</th><td>{{anemia_t}}</td></tr>
+				<tr><th>Change of ACEi/ARB medication use from last clinic visit:</th><td>{{aceiarb_t}}</td></tr>
+			{% endif %}
+	</table>
+	<h2>Among patients with the same profile,</h2>
+		<h3>50% will have RRT or half of current GFR by <strong> {{estimate50}} </strong></h3>
+		<h3>25% will have RRT or half of current GFR by <strong> {{estimate25}} </strong></h3>
+		<h3>10% will have RRT or half of current GFR by <strong> {{estimate10}} </strong></h3>
+
+	<div class="noprint">
+		<input type="submit" class="btn btn-primary" value="Re-calculate" onclick="window.location='/calculator/wizard';" /> 
+		<input type="button" class="btn btn-primary" onClick="window.print()"  value="Print Report"/>
+	</div>
+{% endblock %}
+

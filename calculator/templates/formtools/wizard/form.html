@@ -1,0 +1,67 @@
+{% extends "base_generic.html" %}
+
+{% load widget_tweaks %}
+
+{% load i18n %}
+
+{% block head %}
+{{ wizard.form.media }}
+{% endblock %}
+
+{% block content %}
+  {% if wizard.steps.step1 == 1 %}
+      <h2>Step {{ wizard.steps.step1 }} of {{ wizard.steps.count }}: Enter basic information</h2>
+    {% elif wizard.steps.step1 == 2 %}
+      <h2>Step {{ wizard.steps.step1 }} of {{ wizard.steps.count }}: Enter information from current clinic visit</h2>
+    {% else %}
+      <h2>Step {{ wizard.steps.step1 }} of {{ wizard.steps.count }}: Enter information from clinic visit about one year ago</h2>
+  {% endif %}
+
+
+  <!--  -->
+  <!-- {% for field in wizard.form.visible_fields %} -->
+    <!-- <div class="form-group"> -->
+      <!-- {{ field.value }} -->
+    <!-- </div> -->
+  <!-- {% endfor %} -->
+  <!--  -->
+
+<!--   <form action="" method="post">{% csrf_token %}
+    {{ wizard.management_form }}
+    <table border="1">
+      {{wizard.form}}
+    </table>
+ -->
+  <form action="" method="post">{% csrf_token %}
+    <table border="1">
+    {{ wizard.management_form }}
+    {% for hidden_field in wizard.form.hidden_fields %}
+      {{ hidden_field }}
+    {% endfor %}
+
+    {% for field in wizard.form.visible_fields %}
+      <div class="form-group">
+        {{ field.label_tag }}
+        {% if field.field.widget.attrs|length == 0 %}
+          {% render_field field class="form-control" %}
+        {% else %}
+          {% render_field field class="radio" %}
+        {% endif %}
+        {% if field.help_text %}
+          <small class="form-text text-muted">{{ field.help_text }}</small>
+        {% endif %}
+      </div>
+    {% endfor %}
+    </table>
+
+    {% if wizard.steps.prev %}
+      <button name="wizard_goto_step" type="submit" class="btn btn-primary" value="{{ wizard.steps.prev }}">{% trans "Prev Step" %}</button>
+    {% endif %}
+    {% if wizard.steps.next %}
+      <!-- <button name="wizard_goto_step" type="submit" class="btn btn-primary" value="{{ wizard.steps.next }}">{% trans "Next Step" %}</button> -->
+      <input type="submit" class="btn btn-primary" value="{% trans "Next Step" %}"/>
+    {% else %}
+      <input type="submit" class="btn btn-primary" value="{% trans "Submit" %}"/>
+    {% endif %}
+  </form>
+{% endblock %}
